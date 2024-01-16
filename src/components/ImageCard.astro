@@ -1,0 +1,23 @@
+---
+import { Image } from "astro:assets";
+import photo from "../images/jack.png";
+
+export interface props {
+    title: string,
+}
+
+const { title } = Astro.props;
+---
+
+<div class="bg-accent max-w-sm rounded overflow-hidden shadow-lg text-primary">
+  <Image class="w-full" src={photo} alt="Sunset in the mountains" />
+  <div class="px-6 py-4">
+    <div class="font-bold text-xl mb-2">{title}</div>
+    <p class="text-gray-700 text-base">
+      <slot />
+    </p>
+  </div>
+  <div class="px-6 pt-4 pb-2 w-fit ml-auto">
+    <a class="btn-secondary" href="">Pedigree</a>
+  </div>
+</div>

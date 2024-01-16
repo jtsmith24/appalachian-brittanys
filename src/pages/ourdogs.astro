@@ -1,0 +1,42 @@
+---
+import Header from "../components/Header.astro";
+import ImageCard from "../components/ImageCard.astro";
+import Layout from "../layouts/Layout.astro";
+import Main from "../layouts/Main.astro";
+---
+
+<Layout title="Our Dogs - Appalachian Brittanys">
+  <Header />
+  <Main>
+    <section id="our-dogs">
+      <h2 class="p-20 text-center">
+        <span class="border-b-1 border-r-1 pr-20 pb-5">Our Dogs</span>
+      </h2>
+      <div class="image-card-gal">
+        <div class="md:ml-auto">
+          <ImageCard title="Captain Jack Sparrow III">
+            Jack is the grandson of Champion GRAND JUNCTION JAKE (DC,AFC) &
+            Champion GAMBLERS ACE IN THE HOLE (NFC,DC,AFC) & Champion Carolina
+            Ranger ll (FC,AFC,) & Champion Autens Meg-Netic Field (FC). He has
+            tremendous amount of drive and natural instinct! We are supper
+            excited to see what's to come from this stud!
+          </ImageCard>
+        </div>
+        <div class="md:mr-auto">
+          <ImageCard />
+        </div>
+        <div class="md:ml-auto">
+          <ImageCard />
+        </div>
+        <div class="md:mr-auto">
+          <ImageCard />
+        </div>
+      </div>
+    </section>
+  </Main>
+</Layout>
+<style>
+  .image-card-gal {
+    @apply grid grid-cols-1 md:grid-cols-2 place-items-center gap-2
+  }
+</style>

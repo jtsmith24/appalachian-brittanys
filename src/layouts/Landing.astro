@@ -1,0 +1,56 @@
+---
+import { Image } from "astro:assets";
+import photo from "../images/bird-mouth.jpg";
+import Layout from "./Layout.astro";
+
+export interface LandingProps {
+  id: string
+}
+
+const { id } = Astro.props
+---
+<Layout title="Home">
+  <section id={id}>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-0 md:flex-row justify-center items-stretch p-2 md:p-12">
+      <div class="mx-auto md:ml-auto md:mr-0 p-2">
+        <Image width={300} src={photo} alt="Landing page Brittany puppy" />
+      </div>
+      <div class="flex flex-col items-start p-2 md:mx-10 md:w-2/3">
+        <h1
+          class="mb-8 self-center md:self-start"
+        >
+          Welcome!
+        </h1>
+        <p class="md:font-medium mb-8">
+          We are the Lawson family from Jacksboro, Tennessee.
+        </p>
+        <p>
+          We have an extreme love of not just Brittanys but all dogs. We take great
+          pride in making sure our dogs are healthy and well cared for. We truly
+          strive to produce a companion that will provide lasting enjoyment and
+          loving memories for you and your family. Please contact us for information
+          on past, present and future litters as well as other services we offer!
+        </p>
+        <div class="border-b-1 border-l-1 border-accent pb-4 pl-4 mt-5 md:mt-auto w-full ">
+          <div class="mx-auto md:ml-2 md:mt-auto">
+            <button
+              class="primary-btn"
+              >Our Dogs
+            </button>
+            <button
+              class="primary-btn ml-6"
+              >Services
+            </button>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  </section>
+</Layout>
+
+<style>
+  img {
+    @apply outline outline-accent outline-1 drop-shadow-2xl rounded-md h-[20rem] md:w-fit md:h-[495px] object-cover;
+  }
+</style>

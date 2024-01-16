@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: #462d23;
+    --color-accent: #d7b59f;
+    --color-light-accent: #c5d5e6;
+  }
+  body {
+    @apply bg-primary text-accent;
+  }
+
+  @layer components {
+    nav * li {
+      @apply hover:underline hover:underline-offset-8;
+    }
+
+    section h1,
+    section h2 {
+      @apply font-semibold text-3xl md:text-8xl drop-shadow-2xl;
+    }
+
+    .btn-primary {
+      @apply bg-none hover:bg-accent text-accent hover:text-primary outline outline-1 outline-accent hover:outline-primary py-2 px-4 rounded-full inline-block;
+    }
+
+    .btn-secondary {
+      @apply bg-none hover:bg-primary text-primary hover:text-accent outline outline-1 outline-primary hover:outline-accent py-2 px-4 rounded-full inline-block;
+    }
+  }
+}
+
+@layer utilities {
+  .border-b-1 {
+    border-bottom-width: 1px;
+  }
+  .border-t-1 {
+    border-top-width: 1px;
+  }
+  .border-l-1 {
+    border-left-width: 1px;
+  }
+  .border-r-1 {
+    border-right-width: 1px;
+  }
+}
