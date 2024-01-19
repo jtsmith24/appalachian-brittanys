@@ -1,0 +1,40 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
+import Main from "../layouts/Main.astro";
+import Header from "./Header.astro";
+
+const { title, description } = Astro.props;
+const colAmt = 4;
+const imageImports = import.meta.glob<{ default: ImageMetadata }>(
+  "../images/*.{jpeg,jpg,png,gif}"
+);
+const imagePaths = await Promise.all(
+  Object.values(imageImports).map((fn) => fn().then(({ default: url }) => url))
+);
+
+function chunkImagePaths(array: ImageMetadata[], size: number) {
+  const chunkedArray = [];
+  for (let i = 0; i < array.length; i += size) {
+    chunkedArray.push(array.slice(i, i + size));
+  }
+  return chunkedArray;
+}
+
+const imageChunks = chunkImagePaths(imagePaths, (imagePaths.length/colAmt));
+---
+
+<Layout title="Gallery - Appalachian Brittanys">
+  <Header />
+  <Main>
+      <div id="gallery" class="grid grid-cols-4 gap-4 place-items-start p-4">
+        {imageChunks.map((chunk) => (
+          <div class="grid place-content-center gap-4">
+            {chunk.map((image) => (
+                <Image class="h-auto max-w-full rounded-lg" src={image} alt="" />
+            ))}
+          </div>
+        ))}
+      </div>
+  </Main>
+</Layout>

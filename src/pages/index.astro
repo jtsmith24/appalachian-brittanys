@@ -3,7 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Main from "../layouts/Main.astro";
 import { Image } from "astro:assets";
-import photo from "../images/bird-mouth.jpg";
+import photo from "../images/landing/bird-mouth.jpg";
 ---
 
 <Layout title="Home - Appalachian Brittanys">
@@ -14,7 +14,7 @@ import photo from "../images/bird-mouth.jpg";
         class="grid grid-cols-1 md:grid-cols-2 gap-0 md:flex-row justify-center items-stretch p-2 md:p-12"
       >
         <div class="mx-auto md:ml-auto md:mr-0 p-2">
-          <Image width={300} src={photo} alt="Landing page Brittany puppy" />
+          <Image quality={"high"} width={300} src={photo} alt="Landing page Brittany puppy" />
         </div>
         <div class="flex flex-col items-start p-2 md:mx-10 md:w-2/3">
           <h1 class="mb-8 self-center md:self-start">Welcome!</h1>

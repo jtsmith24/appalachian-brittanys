@@ -1,0 +1,14 @@
+---
+import Gallery from "../components/Gallery.astro";
+import Layout from "../layouts/Layout.astro";
+import Main from "../layouts/Main.astro";
+
+let title = 'Multiverse by HTML5 UP'
+let description =
+  'Say hello to Multiverse, a slick, one-page gallery design with a fully functional lightbox.'
+---
+<Layout title="Photos - Appalachian Brittanys">
+    <Main>
+        <Gallery title={title} description={description}></Gallery>
+    </Main>
+</Layout>

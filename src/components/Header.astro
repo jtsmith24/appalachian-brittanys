@@ -1,15 +1,21 @@
 ---
-export interface props {
-  navItems: string[];
-}
+import { Image } from "astro:assets";
+
+import photo from "../../public/line-art-v1.webp";
 ---
 
-<header class="w-full p-10 border-b-1">
-  <nav class="bg-gray-800 flex align-middle justify-between">
-    <h1>Appalachian Brittanys</h1>
-    <ul class="hidden md:flex flex-row justify-end space-x-8">
+<header class="w-full p-10">
+  <nav class="flex justify-between items-center">
+    <Image class="border-4 border-black size-28 ml-20 mix-blend-multiply" src={photo} alt="" />
+    <ul class="hidden md:flex space-x-8">
       <li>
         <a href="/">Home</a>
+      </li>
+      <li>
+        <a href="/ourdogs">Our Dogs</a>
+      </li>
+      <li>
+        <a href="/photos">Gallery</a>
       </li>
     </ul>
   </nav>
