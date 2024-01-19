@@ -4,6 +4,7 @@ import Header from "../components/Header.astro";
 import Main from "../layouts/Main.astro";
 import { Image } from "astro:assets";
 import photo from "../images/landing/bird-mouth.jpg";
+import { Button } from "@/components/ui/button";
 ---
 
 <Layout title="Home - Appalachian Brittanys">
@@ -29,11 +30,9 @@ import photo from "../images/landing/bird-mouth.jpg";
             contact us for information on past, present and future litters as
             well as other services we offer!
           </p>
-          <div class="mt-5 md:mt-auto w-full">
-            <div class="mx-auto md:ml-2 md:mt-auto">
-              <a class="btn-primary" href="/ourdogs">Our Dogs</a>
-              <a class="btn-primary ml-6">Services</a>
-            </div>
+          <div class="flex place-content-center md:place-content-start gap-4 mt-5 md:mt-auto w-full ">
+              <Button variant="outline-primary">Our Dogs</Button>
+              <Button variant="outline-primary">Services</Button>
           </div>
         </div>
       </div>

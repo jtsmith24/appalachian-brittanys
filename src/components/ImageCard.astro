@@ -1,5 +1,6 @@
 ---
 import { Image } from "astro:assets";
+import { Button } from "./ui/button";
 
 export interface Props {
     title: string;
@@ -13,12 +14,12 @@ const { title, image, description } = Astro.props;
 <div class="flex flex-col bg-accent min-w-lg rounded overflow-hidden shadow-lg text-primary">
   <Image src={image} alt={description ?? ""} />
   <div class="px-6 py-4">
-    <div class="font-bold text-xl mb-2">{title}</div>
+    <h1 class="text-background font-bold text-xl mb-2">{title}</h1>
     <p>
       <slot />
     </p>
   </div>
   <div class="px-6 pt-4 pb-2 w-fit ml-auto mt-auto">
-    <a class="btn-secondary" href="">Pedigree</a>
+    <Button variant="outline-secondary">Pedigree</Button>
   </div>
 </div>

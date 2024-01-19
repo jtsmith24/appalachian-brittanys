@@ -4,12 +4,81 @@
 
 @layer base {
   :root {
-    --color-primary: #462d23;
-    --color-accent: #d7b59f;
+    --color-primary: 17, 33%, 21%;
+    --color-secondary: 24, 41%, 73%;
     --color-light-accent: #c5d5e6;
+
+    /* ShadCN UI styles */
+
+    --background: var(--color-primary);
+    --foreground: 0 0% 3.9%;
+
+    --card: var(--color-primary);
+    --card-foreground: 0 0% 3.9%;
+
+    --popover:  var(--color-primary);
+    --popover-foreground: 0 0% 3.9%;
+
+    --primary: var(--color-primary);
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: var(--color-secondary);
+    --secondary-foreground: var(--color-primary);
+
+    --muted: var(--color-secondary);
+    --muted-foreground: 0 0% 45.1%;
+
+    --accent: var(--color-secondary);
+    --accent-foreground: var(--color-primary);
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: var(--color-secondary);
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+
+    --radius: 0.5rem;
+    background-color: var(--background);
   }
-  body {
-    @apply bg-primary text-accent;
+
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+  }
+
+  @layer base {
+    * {
+      @apply border-border;
+    }
+    body {
+      @apply bg-background text-secondary;
+    }
   }
 
   @layer components {
@@ -20,14 +89,6 @@
     section h1,
     section h2 {
       @apply font-semibold text-3xl md:text-8xl drop-shadow-2xl;
-    }
-
-    .btn-primary {
-      @apply bg-none hover:bg-accent text-accent hover:text-primary outline outline-1 outline-accent hover:outline-primary py-2 px-4 rounded-full inline-block;
-    }
-
-    .btn-secondary {
-      @apply bg-none hover:bg-primary text-primary hover:text-accent outline outline-1 outline-primary hover:outline-accent py-2 px-4 rounded-full inline-block;
     }
   }
 }
