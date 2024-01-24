@@ -19,19 +19,21 @@ export function ImageCarousel({ images }: props) {
     <Carousel
       opts={{
         align: "start",
+        loop: true,
       }}
       className="w-full max-w-screen-2xl"
     >
       <CarouselContent>
         {images.map((_, index) => (
           <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-            <div className="p-1">
-              <Card>
-                <CardContent className="flex aspect-square items-center justify-center p-6">
-                  <img className="aspect-square object-cover" src={_.src}></img>
-                </CardContent>
-              </Card>
-            </div>
+            <Card>
+              <CardContent className="flex aspect-square items-center justify-center p-0">
+                <img
+                  className="aspect-square rounded-lg object-cover"
+                  src={_.src}
+                ></img>
+              </CardContent>
+            </Card>
           </CarouselItem>
         ))}
       </CarouselContent>
