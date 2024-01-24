@@ -2,23 +2,18 @@
 import { Image } from "astro:assets";
 
 import photo from "../../public/line-art-v1.webp";
+import { Navigation } from "@/components/Navigation";
 ---
 
-<header class="w-full p-10">
-  <nav class="flex justify-between items-center">
+<header>
+  <nav class="flex justify-between items-center mr-10">
     <a href="/">
-      <Image class="border-4 border-black rounded-sm size-28 ml-20 mix-blend-multiply" src={photo} alt="" />
+      <Image
+        class="border-4 border-black rounded-sm size-28 ml-20 mix-blend-multiply"
+        src={photo}
+        alt=""
+      />
     </a>
-    <ul class="hidden md:flex space-x-8">
-      <li>
-        <a href="/">Home</a>
-      </li>
-      <li>
-        <a href="/ourdogs">Our Dogs</a>
-      </li>
-      <li>
-        <a href="/photos">Gallery</a>
-      </li>
-    </ul>
+    <Navigation client:load />
   </nav>
 </header>

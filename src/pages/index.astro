@@ -5,6 +5,18 @@ import Main from "../layouts/Main.astro";
 import { Image } from "astro:assets";
 import photo from "../images/landing/bird-mouth.jpg";
 import { Button } from "@/components/ui/button";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
+import { ImageCarousel } from "@/components/ImageCarousel";
+const imageImports = import.meta.glob<{ default: ImageMetadata }>(
+  "../images/*.{jpeg,jpg,png,gif}",
+);
+const imagePaths = await Promise.all(
+  Object.values(imageImports).map((fn) => fn().then(({ default: url }) => url)),
+);
 ---
 
 <Layout title="Home - Appalachian Brittanys">
@@ -15,7 +27,12 @@ import { Button } from "@/components/ui/button";
         class="grid grid-cols-1 md:grid-cols-2 gap-0 md:flex-row justify-center items-stretch p-2 md:p-12"
       >
         <div class="mx-auto md:ml-auto md:mr-0 p-2">
-          <Image quality={"high"} width={300} src={photo} alt="Landing page Brittany puppy" />
+          <Image
+            quality={"high"}
+            width={300}
+            src={photo}
+            alt="Landing page Brittany puppy"
+          />
         </div>
         <div class="flex flex-col items-start p-2 md:mx-10 md:w-2/3">
           <h1 class="mb-8 self-center md:self-start">Welcome!</h1>
@@ -30,11 +47,18 @@ import { Button } from "@/components/ui/button";
             contact us for information on past, present and future litters as
             well as other services we offer!
           </p>
-          <div class="flex place-content-center md:place-content-start gap-4 mt-5 md:mt-auto w-full ">
-              <Button variant="outline-primary">Our Dogs</Button>
-              <Button variant="outline-primary">Services</Button>
+          <div
+            class="flex place-content-center md:place-content-start gap-4 mt-5 md:mt-auto w-full"
+          >
+            <Button variant="outline-primary">Our Dogs</Button>
+            <Button variant="outline-primary">Services</Button>
           </div>
         </div>
+      </div>
+    </section>
+    <section>
+      <div class="flex justify-center w-full">
+        <ImageCarousel images={imagePaths} client:visible />
       </div>
     </section>
   </Main>
@@ -42,6 +66,6 @@ import { Button } from "@/components/ui/button";
 
 <style>
   img {
-    @apply border-4 border-accent drop-shadow-2xl rounded-md h-[20rem] md:w-fit md:h-[495px] object-cover;
+    @apply h-[20rem] rounded-md border-4 border-secondary object-cover drop-shadow-2xl md:h-[495px] md:w-fit;
   }
 </style>
