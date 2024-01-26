@@ -7,48 +7,47 @@ import jackPhoto from "../images/our-dogs/jack.png";
 import dixiePhoto from "../images/our-dogs/dixie.jpg";
 import lilyPhoto from "../images/our-dogs/lily.jpg";
 import piperPhoto from "../images/our-dogs/piper.jpg";
+import { Card, CardContent } from "@/components/ui/card";
+import { TabbedCard } from "@/components/TabbedCard";
 ---
 
 <Layout title="Our Dogs - Appalachian Brittanys">
   <Header />
   <Main>
-    <section id="our-dogs">
-      <h1 class="text-center">
-        <p class="border-b-1 border-r-2 inline-block pb-10 pr-20">Our Dogs</p>
-      </h1>
-      <div class="card-container">
-        <ImageCard title="Captain Jack Sparrow III" image={jackPhoto}>
-          Jack is the grandson of Champion GRAND JUNCTION JAKE (DC,AFC) &
-          Champion GAMBLERS ACE IN THE HOLE (NFC,DC,AFC) & Champion Carolina
-          Ranger ll (FC,AFC,) & Champion Autens Meg-Netic Field (FC). He has
-          tremendous amount of drive and natural instinct! We are supper excited
-          to see what's to come from this stud!
-        </ImageCard>
-        <ImageCard title="Dixie Belle" image={dixiePhoto}>
-          This sweet girl is the grand daughter of Champion JUST CALL ME ROY
-          (NFC,NAFC,FC,AFC) & Champion Shambo's Dark Shadow (NFC,FC,AFC) &
-          Champion The Prairie Tornado (FC, AFC) & Champion Piney Run Sam (NAFC,
-          FC, AFC). We are ecstatic to see what wonder and great things are to
-          come from the exceptional girl. She is Liver/Roan Color. Allot of
-          natural instinct and drive. She is just amazing with children and has
-          never met a stranger!
-        </ImageCard>
-        <ImageCard title="Appalachian Lily Bug " image={lilyPhoto}>
-          This precious girl is the grand daughter of all these Champion's Just
-          look at her Pedigree! Nolan's Last Bullet & High Hopes Dark Nite (DC,
-          NAGDC, NGDC, AFC) & Gamblers Ace In The Hole (NFC, DC, AFC) & High
-          Hopes Fly By Nite (NAGDC, FC, AFC) & Spanish Corral's Sundance Kid
-          (NAFC, GFC, FC, AFC) & Grand Junction Jake (DC, AFC) ! We are super
-          excited to see what she is going to do and produce in the near future!
-        </ImageCard>
-        <ImageCard title="Appalachian Piper Picked Peppers" image={piperPhoto}>
-          This darling girl is the grand daughter of all these Champion's Just
-          look at her Pedigree! Nolan's Last Bullet & High Hopes Dark Nite (DC,
-          NAGDC, NGDC, AFC) & Gamblers Ace In The Hole (NFC, DC, AFC) & High
-          Hopes Fly By Nite (NAGDC, FC, AFC) & Spanish Corral's Sundance Kid
-          (NAFC, GFC, FC, AFC) & Grand Junction Jake (DC, AFC) ! We are super
-          excited to see what she is going to do and produce in the near future!
-        </ImageCard>
+    <section class="bg-background">
+      <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+        <div class="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
+          <h2 class="mb-4 text-4xl font-extrabold">Puppy Pricing</h2>
+          <p class="mb-5 font-light sm:text-xl text-left">
+            Limited spots available. Picks are made in order the deposits are
+            received. Pups will have their first round of Distemper, parvovirus
+            shots at 6 weeks old that is included in the purchase price and
+            treated for worms at 2, 4, 6 and 8 weeks of age. There Second round
+            of vaccines for distemper at 8 weeks old will be at the buyers
+            expense; usually around $30.00. Puppies will have there Dewclaws
+            removed and tails docked. They will be ready to go to their new
+            homes when they are 8 weeks of age.
+          </p>
+        </div>
+        <div
+          class="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0"
+        >
+          <div
+            class="col-span-1 flex flex-col p-6 mx-auto max-w-lg text-center bg-secondary rounded-lg border shadow xl:p-8 text-primary"
+          >
+            <h3 class="mb-4 text-3xl font-semibold">Deposit</h3>
+            <p class="sm:text-lg">
+              A non-refundable deposit of $200 is due to hold your puppy. The
+              remaining balance will be paid at time of pick up.
+            </p>
+            <div class="flex justify-center items-baseline my-8">
+              <span class="mr-2 text-5xl font-extrabold">$200</span>
+            </div>
+          </div>
+          <div class="col-span-2">
+            <TabbedCard client:load />
+          </div>
+        </div>
       </div>
     </section>
   </Main>
