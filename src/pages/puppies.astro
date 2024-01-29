@@ -1,8 +1,9 @@
 ---
+import SimpleCard from "@/components/SimpleCard.astro";
+import { TabbedCard } from "@/components/TabbedCard";
 import Header from "../components/Header.astro";
 import Layout from "../layouts/Layout.astro";
 import Main from "../layouts/Main.astro";
-import { TabbedCard } from "@/components/TabbedCard";
 import { ImageCarousel } from "@/components/ImageCarousel";
 const imageImports = import.meta.glob<{ default: ImageMetadata }>(
   "../images/puppies/*.{jpeg,jpg,png,gif}",
@@ -15,8 +16,8 @@ const imagePaths = await Promise.all(
 <Layout title="Our Dogs - Appalachian Brittanys">
   <Header />
   <Main class="bg-background">
-    <section>
-      <div class="flex place-items-center justify-center gap-6">
+    <section class="h-dvh">
+      <div class="grid grid-cols-2 place-items-center justify-center gap-6">
         <div class="p-10">
           <ImageCarousel images={imagePaths} client:visible />
         </div>
@@ -33,13 +34,66 @@ const imagePaths = await Promise.all(
             they are 8 weeks of age.
           </p>
         </div>
+        <div class="col-span-2">
+          <TabbedCard client:load />
+        </div>
       </div>
     </section>
-    <section>
-      <TabbedCard client:load />
-    </section>
-    <section>
-      <h2>Registration Info</h2>
+    <section class="h-dvh">
+      <h2 class="pt-32 pb-16 text-center">Registration Info</h2>
+      <div class="grid grid-cols-2 gap-4">
+        <SimpleCard className="col-span-2">
+          <h3 class="mb-4 text-3xl font-semibold">Registering Your Puppy</h3>
+          <p class="text-left">
+            You will receive and sign a statement acknowledging your receipt of
+            your AKC official ownership registration form in your puppies take
+            home packet.
+          </p>
+          <ul class="text-left">
+            <li>
+              <a
+                href="https://www.akc.org/register/dog/"
+                target="_blank"
+                rel="noopener noreferrer">How to register your puppy</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.akc.org/register/information/fee-schedule/"
+                target="_blank"
+                rel="noopener noreferrer">Fee Schedule</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.akc.org/register/information/transfer/#dupapp2"
+                target="_blank"
+                rel="noopener noreferrer">Lost Paperwork information<br /></a
+              >
+            </li>
+          </ul>
+        </SimpleCard>
+        <SimpleCard>
+          <h3 class="mb-4 text-3xl font-semibold">Full Registration</h3>
+          <ul class="text-left">
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+          </ul>
+        </SimpleCard>
+        <SimpleCard>
+          <h3 class="mb-4 text-3xl font-semibold">Limited Registration</h3>
+          <ul class="text-left">
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+          </ul>
+        </SimpleCard>
+      </div>
     </section>
   </Main>
 </Layout>

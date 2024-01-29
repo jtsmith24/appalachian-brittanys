@@ -1,0 +1,16 @@
+---
+import { cn } from "@/lib/utils";
+interface Props {
+  className?: string;
+}
+const { className } = Astro.props;
+---
+
+<div
+  class={cn(
+    className,
+    "mx-auto grid w-full max-w-lg grid-cols-1 rounded-lg border bg-secondary p-6 text-center text-primary shadow xl:p-8",
+  )}
+>
+  <slot />
+</div>
