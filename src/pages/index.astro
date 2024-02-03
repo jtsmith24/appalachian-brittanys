@@ -5,11 +5,6 @@ import Main from "../layouts/Main.astro";
 import { Image } from "astro:assets";
 import photo from "../images/landing/bird-mouth.jpg";
 import { Button } from "@/components/ui/button";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel";
 import { ImageCarousel } from "@/components/ImageCarousel";
 const imageImports = import.meta.glob<{ default: ImageMetadata }>(
   "../images/*.{jpeg,jpg,png,gif}",
