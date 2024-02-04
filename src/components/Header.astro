@@ -6,14 +6,16 @@ import { Navigation } from "@/components/Navigation";
 ---
 
 <header>
-  <nav class="flex justify-between items-center mr-10">
-    <a href="/">
+  <nav class="flex justify-center sm:justify-between items-center">
+    <a class="py-4 sm:p-10" href="/">
       <Image
-        class="border-4 border-black rounded-sm size-28 ml-20 mix-blend-multiply"
+        class="border-4 border-black rounded-sm size-28 mix-blend-multiply"
         src={photo}
         alt=""
       />
     </a>
-    <Navigation client:load />
+    <div class="hidden sm:block">
+      <Navigation client:load />
+    </div>
   </nav>
 </header>

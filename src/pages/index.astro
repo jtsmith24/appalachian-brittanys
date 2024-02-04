@@ -19,19 +19,14 @@ const imagePaths = await Promise.all(
   <Main>
     <section id="home">
       <div
-        class="grid grid-cols-1 md:grid-cols-2 gap-0 md:flex-row justify-center items-stretch p-2 md:p-12"
+        class="grid grid-cols-1 sm:grid-cols-2 place-items-center"
       >
-        <div class="mx-auto md:ml-auto md:mr-0 p-2">
-          <Image
-            quality={"high"}
-            width={300}
-            src={photo}
-            alt="Landing page Brittany puppy"
-          />
+        <div class="px-20 pt-10 sm:p-24">
+          <ImageCarousel images={imagePaths} client:visible />
         </div>
-        <div class="flex flex-col items-start p-2 md:mx-10 md:w-2/3">
-          <h1 class="mb-8 self-center md:self-start">Welcome!</h1>
-          <p class="md:font-medium mb-8">
+        <div class="flex flex-col p-10 gap-8">
+          <h1 class="mb-8 self-center sm:self-start">Welcome!</h1>
+          <p class="sm:font-medium">
             We are the Lawson family from Jacksboro, Tennessee.
           </p>
           <p>
@@ -43,7 +38,7 @@ const imagePaths = await Promise.all(
             well as other services we offer!
           </p>
           <div
-            class="flex place-content-center md:place-content-start gap-4 mt-5 md:mt-auto w-full"
+            class="flex gap-4 mt-auto justify-center sm:justify-start"
           >
             <Button variant="outline-primary">Our Dogs</Button>
             <Button variant="outline-primary">Services</Button>
@@ -52,15 +47,7 @@ const imagePaths = await Promise.all(
       </div>
     </section>
     <section>
-      <div class="flex justify-center w-full">
-        <ImageCarousel images={imagePaths} client:visible />
-      </div>
+      <div class="flex justify-center w-full"></div>
     </section>
   </Main>
 </Layout>
-
-<style>
-  img {
-    @apply h-[20rem] rounded-md border-4 border-secondary object-cover drop-shadow-2xl md:h-[495px] md:w-fit;
-  }
-</style>

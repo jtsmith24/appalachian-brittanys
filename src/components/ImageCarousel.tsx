@@ -14,36 +14,31 @@ interface props {
   autoPlay?: boolean;
 }
 
-export function ImageCarousel({ images, }: props) {
+export function ImageCarousel({ images }: props) {
   return (
-      <Carousel
-        opts={{
-          align: "start",
-          loop: true,
-          
-        }}
-        plugins={[
-          Autoplay({
-            delay: 5000,
-          }),
-        ]}
-      >
-        <CarouselContent className="size-96">
-          {images.map((_, index) => (
-            <CarouselItem key={index}>
-              <Card className="border-0">
-                <CardContent className="flex items-center justify-center p-0">
-                  <img
-                    className="aspect-square rounded-lg object-cover"
-                    src={_.src}
-                  ></img>
-                </CardContent>
-              </Card>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
-      </Carousel>
+    <Carousel
+      opts={{
+        align: "start",
+        loop: true,
+      }}
+      plugins={[
+        Autoplay({
+          delay: 10000,
+        }),
+      ]}
+    >
+      <CarouselContent>
+        {images.map((_, index) => (
+          <CarouselItem key={index}>
+            <img
+              className="aspect-square rounded-lg object-cover self-center"
+              src={_.src}
+            ></img>
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+      <CarouselPrevious />
+      <CarouselNext />
+    </Carousel>
   );
 }
