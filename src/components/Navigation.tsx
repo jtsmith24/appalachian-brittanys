@@ -58,13 +58,8 @@ export function Navigation() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuLink href="/" className={navigationMenuTriggerStyle()}>
-            Testimonials
-          </NavigationMenuLink>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuLink href="/" className={navigationMenuTriggerStyle()}>
-            Contact
+          <NavigationMenuLink href="/photos" className={navigationMenuTriggerStyle()}>
+            Photos
           </NavigationMenuLink>
         </NavigationMenuItem>
       </NavigationMenuList>

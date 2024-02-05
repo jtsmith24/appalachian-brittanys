@@ -4,8 +4,7 @@ import Layout from "../layouts/Layout.astro";
 import Main from "../layouts/Main.astro";
 import Header from "./Header.astro";
 
-const { title, description } = Astro.props;
-const colAmt = 4;
+let colAmt = 2;
 const imageImports = import.meta.glob<{ default: ImageMetadata }>(
   "../images/*.{jpeg,jpg,png,gif}"
 );
@@ -27,11 +26,11 @@ const imageChunks = chunkImagePaths(imagePaths, (imagePaths.length/colAmt));
 <Layout title="Gallery - Appalachian Brittanys">
   <Header />
   <Main>
-      <div id="gallery" class="grid grid-cols-4 gap-4 place-items-start p-4">
+      <div id="gallery" class="grid grid-cols-2 gap-4 place-items-start p-4 sm:p-10">
         {imageChunks.map((chunk) => (
           <div class="grid place-content-center gap-4">
             {chunk.map((image) => (
-                <Image class="h-auto max-w-full rounded-lg" src={image} alt="" />
+                <Image quality="high" class="h-auto max-w-full rounded-lg" src={image} alt="" />
             ))}
           </div>
         ))}

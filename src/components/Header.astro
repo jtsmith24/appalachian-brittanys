@@ -1,15 +1,15 @@
 ---
 import { Image } from "astro:assets";
 
-import photo from "../../public/line-art-v1.webp";
+import photo from "../images/header/line-art-v1.svg";
 import { Navigation } from "@/components/Navigation";
 ---
 
 <header>
-  <nav class="flex justify-center sm:justify-between items-center">
-    <a class="py-4 sm:p-10" href="/">
+  <nav class="flex justify-between items-center">
+    <a class="p-4 sm:p-10" href="/">
       <Image
-        class="border-4 border-black rounded-sm size-28 mix-blend-multiply"
+        class="rounded-sm size-28 bg-secondary"
         src={photo}
         alt=""
       />
