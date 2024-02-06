@@ -78,14 +78,40 @@
       @apply border-border;
     }
     body {
-      @apply bg-background text-secondary max-w-[1920px];
+      @apply max-w-[1920px] bg-background text-secondary;
     }
   }
 
   @layer components {
-    section h1,
+    section h1 {
+      @apply mb-8 text-center text-3xl font-semibold drop-shadow-2xl sm:text-left md:text-8xl;
+    }
     section h2 {
       @apply text-3xl font-semibold drop-shadow-2xl md:text-8xl;
+    }
+
+
+    .hamburger-menu {
+      @apply self-end p-2 sm:hidden;
+    }
+    .hamburger-menu svg {
+      @apply h-6 w-6 scale-125 fill-secondary;
+    }
+
+    .icon-container {
+      @apply h-5 w-6 flex-col items-end justify-between;
+    }
+    .icon-container div {
+      @apply h-0.5 transition-all bg-secondary;
+    }
+    #first-line {
+      @apply w-full;
+    }
+    #second-line {
+      @apply w-3/4;
+    }
+    #third-line {
+      @apply w-1/2;
     }
   }
 }

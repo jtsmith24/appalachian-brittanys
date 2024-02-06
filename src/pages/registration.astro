@@ -7,54 +7,72 @@ import jackPhoto from "../images/our-dogs/jack.png";
 import dixiePhoto from "../images/our-dogs/dixie.jpg";
 import lilyPhoto from "../images/our-dogs/lily.jpg";
 import piperPhoto from "../images/our-dogs/piper.jpg";
+import SimpleCard from "@/components/SimpleCard.astro";
 ---
 
 <Layout title="Our Dogs - Appalachian Brittanys">
   <Header />
   <Main>
-    <section id="our-dogs">
-      <h1 class="text-center">
-        <p class="border-b-1 border-r-2 inline-block pb-10 pr-20">Our Dogs</p>
-      </h1>
-      <div class="card-container">
-        <ImageCard title="Captain Jack Sparrow III" image={jackPhoto}>
-          Jack is the grandson of Champion GRAND JUNCTION JAKE (DC,AFC) &
-          Champion GAMBLERS ACE IN THE HOLE (NFC,DC,AFC) & Champion Carolina
-          Ranger ll (FC,AFC,) & Champion Autens Meg-Netic Field (FC). He has
-          tremendous amount of drive and natural instinct! We are supper excited
-          to see what's to come from this stud!
-        </ImageCard>
-        <ImageCard title="Dixie Belle" image={dixiePhoto}>
-          This sweet girl is the grand daughter of Champion JUST CALL ME ROY
-          (NFC,NAFC,FC,AFC) & Champion Shambo's Dark Shadow (NFC,FC,AFC) &
-          Champion The Prairie Tornado (FC, AFC) & Champion Piney Run Sam (NAFC,
-          FC, AFC). We are ecstatic to see what wonder and great things are to
-          come from the exceptional girl. She is Liver/Roan Color. Allot of
-          natural instinct and drive. She is just amazing with children and has
-          never met a stranger!
-        </ImageCard>
-        <ImageCard title="Appalachian Lily Bug " image={lilyPhoto}>
-          This precious girl is the grand daughter of all these Champion's Just
-          look at her Pedigree! Nolan's Last Bullet & High Hopes Dark Nite (DC,
-          NAGDC, NGDC, AFC) & Gamblers Ace In The Hole (NFC, DC, AFC) & High
-          Hopes Fly By Nite (NAGDC, FC, AFC) & Spanish Corral's Sundance Kid
-          (NAFC, GFC, FC, AFC) & Grand Junction Jake (DC, AFC) ! We are super
-          excited to see what she is going to do and produce in the near future!
-        </ImageCard>
-        <ImageCard title="Appalachian Piper Picked Peppers" image={piperPhoto}>
-          This darling girl is the grand daughter of all these Champion's Just
-          look at her Pedigree! Nolan's Last Bullet & High Hopes Dark Nite (DC,
-          NAGDC, NGDC, AFC) & Gamblers Ace In The Hole (NFC, DC, AFC) & High
-          Hopes Fly By Nite (NAGDC, FC, AFC) & Spanish Corral's Sundance Kid
-          (NAFC, GFC, FC, AFC) & Grand Junction Jake (DC, AFC) ! We are super
-          excited to see what she is going to do and produce in the near future!
-        </ImageCard>
+    <section>
+      <h2 class="pt-32 pb-16 text-center">Registration Info</h2>
+      <div class="grid grid-flow-row sm:grid-cols-2 gap-4">
+        <SimpleCard className="sm:col-span-2">
+          <h3 class="mb-4 text-3xl font-semibold">Registering Your Puppy</h3>
+          <p class="text-left">
+            You will receive and sign a statement acknowledging your receipt of
+            your AKC official ownership registration form in your puppies take
+            home packet.
+          </p>
+          <ul class="text-left">
+            <li>
+              <a
+                href="https://www.akc.org/register/dog/"
+                target="_blank"
+                rel="noopener noreferrer">How to register your puppy</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.akc.org/register/information/fee-schedule/"
+                target="_blank"
+                rel="noopener noreferrer">Fee Schedule</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.akc.org/register/information/transfer/#dupapp2"
+                target="_blank"
+                rel="noopener noreferrer">Lost Paperwork information<br /></a
+              >
+            </li>
+          </ul>
+        </SimpleCard>
+        <SimpleCard>
+          <h3 class="mb-4 text-3xl font-semibold">Full Registration</h3>
+          <ul class="text-left">
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+          </ul>
+        </SimpleCard>
+        <SimpleCard>
+          <h3 class="mb-4 text-3xl font-semibold">Limited Registration</h3>
+          <ul class="text-left">
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+          </ul>
+        </SimpleCard>
       </div>
     </section>
   </Main>
 </Layout>
 <style>
-  .card-container {
-    @apply grid grid-cols-1 place-items-center gap-4 px-4 pt-10 md:grid-cols-4 md:px-20;
+  section {
+    @apply mx-auto max-w-screen-xl px-4 py-8 lg:px-6 lg:py-16;
   }
 </style>

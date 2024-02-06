@@ -3,10 +3,11 @@ import { Image } from "astro:assets";
 
 import photo from "../images/header/line-art-v1.svg";
 import { Navigation } from "@/components/Navigation";
+import Hr from "./Hr.astro";
 ---
 
 <header>
-  <nav class="flex justify-between items-center">
+  <div class="grid grid-cols-2 sm:items-end">
     <a class="p-4 sm:p-10" href="/">
       <Image
         class="rounded-sm size-28 bg-secondary hover:scale-105"
@@ -14,8 +15,94 @@ import { Navigation } from "@/components/Navigation";
         alt=""
       />
     </a>
-    <div class="hidden sm:block">
+    <div class="ml-auto sm:hidden">
+      <button
+        class="hamburger-menu"
+        aria-label="Open Menu"
+        aria-expanded="false"
+        aria-controls="menu-items"
+      >
+        <div class="icon-container flex">
+          <div id="first-line"></div>
+          <div id="second-line"></div>
+          <div id="third-line"></div>
+        </div>
+      </button>
+    </div>
+    <div id="menu-items" class="hidden col-span-2 sm:col-span-1 sm:flex sm:justify-end sm:p-4">
       <Navigation client:load />
     </div>
-  </nav>
+    </div>
+  <Hr />
 </header>
+
+<style>
+  .show {
+    @apply flex flex-row justify-center;
+  }
+  .nav-container {
+    @apply mx-auto flex max-w-3xl flex-col items-center justify-between sm:flex-row;
+  }
+  .top-nav-wrap {
+    @apply relative flex w-full items-start justify-between p-4 sm:items-center sm:py-8;
+  }
+  .hamburger-menu {
+    @apply p-8 sm:hidden;
+  }
+
+  .icon-container {
+    @apply h-6 w-8 flex-col items-end justify-between;
+  }
+  .icon-container div {
+    @apply h-0.5 transition-all;
+  }
+  #first-line {
+    @apply w-full;
+  }
+  #second-line {
+    @apply w-3/4;
+  }
+  #third-line {
+    @apply w-1/2;
+  }
+</style>
+
+<script>
+  // Toggle menu
+  const menuBtn = document.querySelector(".hamburger-menu");
+  const menuItems = document.querySelector("#menu-items")?.classList;
+
+  const iconContainer = document.querySelector(".icon-container")?.classList;
+  const firstLine = document.querySelector("#first-line")?.classList;
+  const secondLine = document.querySelector("#second-line ")?.classList;
+  const thirdLine = document.querySelector("#third-line")?.classList;
+
+  menuBtn?.addEventListener("click", function () {
+    const menuExpanded = menuBtn?.getAttribute("aria-expanded");
+    if (menuExpanded === "false") {
+      //expand menu
+      menuBtn?.setAttribute("aria-expanded", "true");
+      menuBtn?.setAttribute("aria-label", "Close Menu");
+      menuItems?.add("show");
+
+      // icon animation
+      iconContainer?.remove("flex");
+      iconContainer?.add("relative");
+      firstLine?.add("rotate-45", "absolute", "bottom-1/2");
+      thirdLine?.add("hidden");
+      secondLine?.add("!w-full", "-rotate-45", "absolute", "bottom-1/2");
+    } else {
+      //close menu
+      menuBtn?.setAttribute("aria-expanded", "false");
+      menuBtn?.setAttribute("aria-label", "Open Menu");
+      menuItems?.remove("show");
+
+      // icon animation
+      iconContainer?.add("flex");
+      iconContainer?.remove("relative");
+      firstLine?.remove("rotate-45", "absolute", "bottom-1/2");
+      thirdLine?.remove("hidden");
+      secondLine?.remove("!w-full", "-rotate-45", "absolute", "bottom-1/2");
+    }
+  });
+</script>

@@ -28,11 +28,11 @@ export function TabbedCard() {
           Limited registration
         </TabsTrigger>
       </TabsList>
-      <TabsContent className="grid grid-cols-3 gap-4" value="full">
+      <TabsContent className="grid grid-flow-row sm:grid-cols-3 gap-4" value="full">
         {DepostCard}
         <div className="mx-auto grid w-full grid-cols-1 rounded-lg border bg-secondary p-6 text-center text-primary shadow xl:p-8">
           <h3 className="mb-4 text-3xl font-semibold">Male</h3>
-          <p className="sm:text-lg">Due at pickup</p>
+          <p className="sm:text-lg">Due at pickup:</p>
           <div className="my-8 mt-auto flex items-baseline justify-center">
             <span className="mr-2 text-5xl font-extrabold">$1000</span>
           </div>
@@ -40,17 +40,17 @@ export function TabbedCard() {
 
         <div className="mx-auto grid w-full max-w-lg grid-cols-1 rounded-lg border bg-secondary p-6 text-center text-primary shadow xl:p-8">
           <h3 className="mb-4 text-3xl font-semibold">Female</h3>
-          <p className="sm:text-lg">Due at pickup</p>
+          <p className="sm:text-lg">Due at pickup:</p>
           <div className="my-8 mt-auto flex items-baseline justify-center">
             <span className="mr-2 text-5xl font-extrabold">$1200</span>
           </div>
         </div>
       </TabsContent>
-      <TabsContent className="mt-0 grid grid-cols-3 gap-4" value="limited">
+      <TabsContent className="mt-0 grid grid-flow-row sm:grid-cols-3 gap-4" value="limited">
         {DepostCard}
         <div className="mx-auto grid w-full max-w-lg grid-cols-1 rounded-lg border bg-secondary p-6 text-center text-primary shadow xl:p-8">
           <h3 className="mb-4 text-3xl font-semibold">Male</h3>
-          <p className="sm:text-lg">Due at pickup</p>
+          <p className="sm:text-lg">Due at pickup:</p>
           <div className="my-8 mt-auto flex items-baseline justify-center">
             <span className="mr-2 text-5xl font-extrabold">$800</span>
           </div>
@@ -58,7 +58,7 @@ export function TabbedCard() {
 
         <div className="mx-auto grid w-full max-w-lg grid-cols-1 rounded-lg border bg-secondary p-6 text-center text-primary shadow xl:p-8">
           <h3 className="mb-4 text-3xl font-semibold">Female</h3>
-          <p className="sm:text-lg">Due at pickup</p>
+          <p className="sm:text-lg">Due at pickup:</p>
           <div className="my-8 mt-auto flex items-baseline justify-center">
             <span className="mr-2 text-5xl font-extrabold">$1000</span>
           </div>

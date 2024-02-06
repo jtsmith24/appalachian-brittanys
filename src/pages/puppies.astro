@@ -16,14 +16,14 @@ const imagePaths = await Promise.all(
 <Layout title="Our Dogs - Appalachian Brittanys">
   <Header />
   <Main class="bg-background">
-    <section class="h-dvh">
-      <div class="grid grid-cols-2 place-items-center justify-center gap-6">
+    <section>
+      <div class="grid grid-cols-1 sm:grid-cols-2">
         <div class="p-10">
           <ImageCarousel images={imagePaths} client:visible />
         </div>
-        <div class="p-10 x-auto max-w-screen-md text-center mb-8 lg:mb-12">
-          <h2 class="mb-4 text-4xl font-bold">Puppies!</h2>
-          <p class="mb-5 sm:text-xl text-left">
+        <div class="p-10 x-auto max-w-screen-md mb-8 lg:mb-12">
+          <h1>Puppies!</h1>
+          <p class="mb-5 sm:text-xl">
             Limited spots available. Picks are made in order the deposits are
             received. Pups will have their first round of Distemper, parvovirus
             shots at 6 weeks old that is included in the purchase price and
@@ -34,65 +34,9 @@ const imagePaths = await Promise.all(
             they are 8 weeks of age.
           </p>
         </div>
-        <div class="col-span-2">
+        <div>
           <TabbedCard client:load />
         </div>
-      </div>
-    </section>
-    <section class="h-dvh">
-      <h2 class="pt-32 pb-16 text-center">Registration Info</h2>
-      <div class="grid grid-cols-2 gap-4">
-        <SimpleCard className="col-span-2">
-          <h3 class="mb-4 text-3xl font-semibold">Registering Your Puppy</h3>
-          <p class="text-left">
-            You will receive and sign a statement acknowledging your receipt of
-            your AKC official ownership registration form in your puppies take
-            home packet.
-          </p>
-          <ul class="text-left">
-            <li>
-              <a
-                href="https://www.akc.org/register/dog/"
-                target="_blank"
-                rel="noopener noreferrer">How to register your puppy</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.akc.org/register/information/fee-schedule/"
-                target="_blank"
-                rel="noopener noreferrer">Fee Schedule</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.akc.org/register/information/transfer/#dupapp2"
-                target="_blank"
-                rel="noopener noreferrer">Lost Paperwork information<br /></a
-              >
-            </li>
-          </ul>
-        </SimpleCard>
-        <SimpleCard>
-          <h3 class="mb-4 text-3xl font-semibold">Full Registration</h3>
-          <ul class="text-left">
-            <li>test</li>
-            <li>test</li>
-            <li>test</li>
-            <li>test</li>
-            <li>test</li>
-          </ul>
-        </SimpleCard>
-        <SimpleCard>
-          <h3 class="mb-4 text-3xl font-semibold">Limited Registration</h3>
-          <ul class="text-left">
-            <li>test</li>
-            <li>test</li>
-            <li>test</li>
-            <li>test</li>
-            <li>test</li>
-          </ul>
-        </SimpleCard>
       </div>
     </section>
   </Main>

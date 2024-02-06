@@ -1,0 +1,18 @@
+---
+export interface Props {
+  noPadding?: boolean;
+  ariaHidden?: boolean;
+  className?: string;
+}
+
+const { noPadding = false, ariaHidden = true, className = "" } = Astro.props;
+---
+
+<div class="px-4">
+  <hr class="border-secondary" aria-hidden={ariaHidden} />
+</div>
+<style>
+  .pr-lg {
+    padding-right: 10rem;
+  }
+</style>
