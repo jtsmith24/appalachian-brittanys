@@ -13,8 +13,8 @@ import piperPhoto from "../images/our-dogs/piper.jpg";
   <Header />
   <Main>
     <section id="our-dogs">
-      <h1 class="text-center">
-        <p class="border-b-1 border-r-2 inline-block pb-10 pr-20">Our Dogs</p>
+      <h1 class="text-center pt-4">
+        <p class="border-b-1 border-r-2 inline-block pb-2 pr-3 sm:pb-10 sm:pr-20">Our Dogs</p>
       </h1>
       <div class="card-container">
         <ImageCard title="Captain Jack Sparrow III" image={jackPhoto}>
@@ -55,6 +55,6 @@ import piperPhoto from "../images/our-dogs/piper.jpg";
 </Layout>
 <style>
   .card-container {
-    @apply grid grid-cols-1 place-items-center gap-4 px-4 pt-10 md:grid-cols-4 md:px-20;
+    @apply grid grid-cols-1 place-items-center gap-4 px-4 pb-10 md:grid-cols-4 md:px-20;
   }
 </style>

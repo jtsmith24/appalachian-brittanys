@@ -5,7 +5,7 @@ interface props {
 }
 
 export function TabbedCard() {
-  const DepostCard = (
+  const DepositCard = (
     <div className="mx-auto grid w-full grid-cols-1 rounded-lg border bg-secondary p-6 text-center text-primary shadow xl:p-8">
       <h3 className="mb-4 text-3xl font-semibold">Deposit</h3>
       <p className="sm:text-lg">
@@ -29,7 +29,7 @@ export function TabbedCard() {
         </TabsTrigger>
       </TabsList>
       <TabsContent className="grid grid-flow-row sm:grid-cols-3 gap-4" value="full">
-        {DepostCard}
+        {DepositCard}
         <div className="mx-auto grid w-full grid-cols-1 rounded-lg border bg-secondary p-6 text-center text-primary shadow xl:p-8">
           <h3 className="mb-4 text-3xl font-semibold">Male</h3>
           <p className="sm:text-lg">Due at pickup:</p>
@@ -47,7 +47,7 @@ export function TabbedCard() {
         </div>
       </TabsContent>
       <TabsContent className="mt-0 grid grid-flow-row sm:grid-cols-3 gap-4" value="limited">
-        {DepostCard}
+        {DepositCard}
         <div className="mx-auto grid w-full max-w-lg grid-cols-1 rounded-lg border bg-secondary p-6 text-center text-primary shadow xl:p-8">
           <h3 className="mb-4 text-3xl font-semibold">Male</h3>
           <p className="sm:text-lg">Due at pickup:</p>
