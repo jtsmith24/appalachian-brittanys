@@ -2,8 +2,6 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Main from "../layouts/Main.astro";
-import { Image } from "astro:assets";
-import photo from "../images/landing/bird-mouth.jpg";
 import { Button } from "@/components/ui/button";
 import { ImageCarousel } from "@/components/ImageCarousel";
 const imageImports = import.meta.glob<{ default: ImageMetadata }>(
@@ -18,9 +16,7 @@ const imagePaths = await Promise.all(
   <Header />
   <Main>
     <section id="home">
-      <div
-        class="grid grid-cols-1 sm:grid-cols-2 place-items-center"
-      >
+      <div class="grid grid-cols-1 sm:grid-cols-2 place-items-center">
         <div class="px-20 pt-10 sm:p-24">
           <ImageCarousel images={imagePaths} client:visible />
         </div>
@@ -37,11 +33,13 @@ const imagePaths = await Promise.all(
             contact us for information on past, present and future litters as
             well as other services we offer!
           </p>
-          <div
-            class="flex gap-4 mt-auto justify-center sm:justify-start"
-          >
-            <Button variant="outline-primary"><a href="/ourdogs">Our Dogs</a></Button>
-            
+          <div class="flex gap-4 mt-auto justify-center sm:justify-start">
+            <Button variant="outline-primary"
+              ><a href="/puppies">Puppies</a></Button
+            >
+            <Button variant="outline-primary"
+              ><a href="/ourdogs">Adult Dogs</a></Button
+            >
           </div>
         </div>
       </div>

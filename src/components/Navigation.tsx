@@ -1,17 +1,14 @@
 import React from "react";
-import { useState } from "react";
-import { clsx } from "clsx";
 import {
   NavigationMenu,
   NavigationMenuContent,
-  NavigationMenuIndicator,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  NavigationMenuViewport,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import puppyPhoto from "../images/puppies/nav.jpeg";
 
@@ -19,9 +16,7 @@ export function Navigation() {
   return (
     <NavigationMenu className="sm:pr-10">
       <NavigationMenuList className="grid grid-cols-1">
-        <div
-          className="grid grid-cols-1 sm:flex"
-        >
+        <div className="grid grid-cols-1 gap-4 sm:flex">
           <NavigationMenuItem>
             <NavigationMenuLink
               href="/"
@@ -33,13 +28,10 @@ export function Navigation() {
           <NavigationMenuItem>
             <NavigationMenuTrigger>Dogs</NavigationMenuTrigger>
             <NavigationMenuContent>
-              <ul className="grid grid-cols-1 gap-3 p-6 w-[400px] md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+              <ul className="grid w-[300px] grid-cols-1 gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                 <li className="row-span-3">
                   <NavigationMenuLink asChild>
-                    <a
-                      className="flex h-full w-full select-none flex-col justify-end rounded-md bg-accent p-6 no-underline outline-none focus:shadow-md"
-                      href="/puppies"
-                    >
+                    <div className="flex h-full w-full select-none flex-col justify-end rounded-md bg-accent p-6 no-underline outline-none focus:shadow-md">
                       <img
                         src={puppyPhoto.src}
                         className="rounded-md border-2 border-background drop-shadow-sm"
@@ -49,10 +41,13 @@ export function Navigation() {
                         Puppies
                       </div>
                       <p className="text-sm leading-tight text-primary">
-                        Click here for information about past, present and
-                        futures litters as well as pricing.
+                        Information about past, present and futures litters as
+                        well as pricing.
                       </p>
-                    </a>
+                      <Button className="mt-5" variant="secondary">
+                        <a href="/puppies">Learn More</a>
+                      </Button>
+                    </div>
                   </NavigationMenuLink>
                 </li>
                 <ListItem href="/ourdogs" title="Our Adult Dogs">
