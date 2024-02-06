@@ -1,54 +1,47 @@
-# Astro Starter Kit: Basics
+# Appalachian Brittanys
 
-```sh
-npm create astro@latest -- --template basics
-```
+## Introduction / Overview
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+Appalachian Brittanys is a web project aimed at revamping the online presence of a small dog breeding service. The goal was to move away from a generic website builder to a custom, responsive design that better serves the needs and character of the service. This project served as a practice ground for web design and layout fundamentals, with a focus on utilizing modern technologies like Astro, Tailwind CSS, and building a custom component library using shadcn components. 
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Technologies Used
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+This project is built with a robust stack of technologies to ensure high performance and a smooth user experience:
 
-## 🚀 Project Structure
+- **Astro**: An all-in-one web framework for building fast, content-focused websites.
+- **React**: A JavaScript library for building user interfaces.
+- **shadcn Components**: Beautifully designed components that you can copy and paste into your apps and build upon. For more info on shadcn, click [here](https://ui.shadcn.com/).
+- **Tailwind CSS**: A utility-first CSS framework for rapidly building custom designs.
 
-Inside of your Astro project, you'll see the following folders and files:
+## Demo
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+Experience the responsive and user-friendly interface of Appalachian Brittanys by visiting the [deployed site](https://appalachian-brittanys.netlify.app/).
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Installation and Setup
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+To get Appalachian Brittanys running locally:
 
-Any static assets, like images, can be placed in the `public/` directory.
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/jtsmith24/appalachian-brittanys.git
+   ```
+1. Navigate to the project directory:
 
-## 🧞 Commands
+   ```sh
+   cd appalachian-brittanys
+   ```
 
-All commands are run from the root of the project, from a terminal:
+1. Install the required dependecies:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+   ```sh
+   npm install
+   ```
 
-## 👀 Want to learn more?
+1. Start the Astro dev server:
+   ```sh
+   npm run dev
+   ```
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## License
+Appalachian Brittanys is available under the MIT license. See the `LICENSE.txt` file for more details.
+
