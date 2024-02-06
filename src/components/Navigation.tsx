@@ -20,7 +20,7 @@ export function Navigation() {
     <NavigationMenu className="sm:pr-10">
       <NavigationMenuList className="grid grid-cols-1">
         <div
-          className="grid grid-cols1 sm:flex"
+          className="grid grid-cols-1 sm:flex"
         >
           <NavigationMenuItem>
             <NavigationMenuLink
@@ -33,7 +33,7 @@ export function Navigation() {
           <NavigationMenuItem>
             <NavigationMenuTrigger>Dogs</NavigationMenuTrigger>
             <NavigationMenuContent>
-              <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+              <ul className="grid grid-cols-1 gap-3 p-6 w-[400px] md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                 <li className="row-span-3">
                   <NavigationMenuLink asChild>
                     <a
@@ -57,12 +57,6 @@ export function Navigation() {
                 </li>
                 <ListItem href="/ourdogs" title="Our Adult Dogs">
                   We currently have 4 beautiful dogs. Check them out!
-                </ListItem>
-                <ListItem href="/studding" title="Studding">
-                  Breed your Female to any of our studs.
-                </ListItem>
-                <ListItem href="/registration" title="Registration Info">
-                  How to register, fees and more...
                 </ListItem>
               </ul>
             </NavigationMenuContent>
